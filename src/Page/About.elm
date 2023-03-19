@@ -1,4 +1,4 @@
-module Page.About exposing (Model, view)
+module Page.About exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (src)
@@ -7,11 +7,11 @@ import Html.Attributes exposing (width)
 import Html.Attributes exposing (size)
 import Html.Attributes exposing (class)
 import Html.Attributes exposing (style)
-type alias Model = {}
+
 
   
-view : () -> { title : String, content : Html msg}
-view _ =
+view : { title : String, content : Html msg}
+view =
   { title = "Home"
   , content =
     div []

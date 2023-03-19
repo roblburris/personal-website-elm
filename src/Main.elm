@@ -128,7 +128,10 @@ update msg model =
       LinkClicked urlReq ->
         case urlReq of
             Browser.Internal url ->
-              ( model, Cmd.batch [Nav.pushUrl model.key (Url.toString url)])
+              if (String.contains "resume" (Url.toString url)) then
+                ( model, Nav.load "/assets/resume.pdf" )
+              else
+                ( model, Cmd.batch [Nav.pushUrl model.key (Url.toString url)])
             Browser.External href ->
               ( model, Nav.load href )
       UrlChanged url ->
@@ -225,18 +228,16 @@ view : Model -> Browser.Document Msg
 view model =
   case model.route of
       Just Home ->
-        Page.view model.date (Home.view ())
+        Page.view model.date (Home.view)
       Just About ->
-        Page.view model.date (About.view ())
-      Just Resume ->
-        Page.view model.date (Home.view ())
+        Page.view model.date (About.view)
       Just Projects ->
-        Page.view model.date (Projects.view ())
+        Page.view model.date (Projects.view)
       Just Blog ->
         Page.view model.date (Blog.view model.blogEntries)
       Just (Post title) ->
         Page.view model.date (blogPostView (getPost (getPostIndex title model.blogEntries) (Array.toList model.posts)))
-      Nothing ->
-        Page.view model.date (Home.view ())
+      _ ->
+        Page.view model.date (Home.view)
 
 

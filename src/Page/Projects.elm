@@ -1,25 +1,7 @@
-module Page.Projects exposing (Model, view)
-
-import Markdown
-
+module Page.Projects exposing (view)
 import Html exposing (..)
-import Markdown.Config exposing (Options, defaultOptions)
-type alias Model = {}
-
-customOptions : Options
-customOptions =
-    { defaultOptions
-        | softAsHardLineBreak = True
-    }
-
-example : String
-example = """
-# Markdown in elm!an e
-"""
-
-
-view : () -> { title : String, content : Html msg}
-view model =
+view : { title : String, content : Html msg}
+view =
   { title = "Home"
   , content =
     div []
@@ -30,7 +12,7 @@ view model =
             Here are some of the school and personal projects that I'm most proud of.
             """
     ]
-    , div [] (Markdown.toHtml (Just customOptions)  example )
+    , h2 [][text "TODO"]
     ]
 
     

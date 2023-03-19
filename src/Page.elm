@@ -13,7 +13,6 @@ type Page
     | Projects
     | Contact
 
-
 navbar : Html msg
 navbar =
   div [class "Navbar"] (List.map 
@@ -25,8 +24,7 @@ navbar =
           (x, (String.fromInt y)))
         ["Home", "About", "Resume", "Projects", "Blog"] (List.range 2 6)
       )
-    )
-
+  )
 
 view : String -> {title : String, content : Html msg}  -> Document msg
 view date {title, content} =

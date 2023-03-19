@@ -1,11 +1,10 @@
-module Page.Home exposing (Model, view)
+module Page.Home exposing (view)
 
 import Html exposing (..)
-type alias Model = {}
 
   
-view : () -> { title : String, content : Html msg}
-view model =
+view : { title : String, content : Html msg}
+view =
   { title = "Home"
   , content =
     div []
