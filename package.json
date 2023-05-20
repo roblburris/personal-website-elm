@@ -15,7 +15,11 @@
     "@parcel/transformer-webmanifest": "^2.0.0",
     "elm": "^0.19.1-5",
     "elm-test": "^0.19.1-revision7",
-    "parcel": "^2.0.0"
+    "parcel": "^2.0.0",
+    "parcel-reporter-static-files-copy": "^1.5.0"
+  },
+  "dependencies": {
+    "@parcel/config-default": "^2.8.3",
+    "install": "^0.13.0"
   }
 }
-

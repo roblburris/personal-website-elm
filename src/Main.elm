@@ -128,7 +128,7 @@ update msg model =
         case urlReq of
             Browser.Internal url ->
               if (String.contains "resume" (Url.toString url)) then
-                ( model, Nav.load "/assets/resume.pdf" )
+                ( model, Nav.load "/resume.pdf" )
               else
                 ( model, Cmd.batch [Nav.pushUrl model.key (Url.toString url)])
             Browser.External href ->
