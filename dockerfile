@@ -2,12 +2,12 @@ FROM alpine:latest
 
 RUN apk add --update yarn
 
-ADD ./* ./
+WORKDIR /home
 
-RUN yarn
-EXPOSE 1234
+COPY . .
+
+RUN yarn cache clean
+RUN yarn install
+EXPOSE 3000
 
 CMD ["yarn", "run", "start"]
-
-
-

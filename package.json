@@ -5,7 +5,7 @@
   "author": "Robert Burris <roblburris@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel public/index.html",
+    "start": "parcel public/index.html -p 3000",
     "build": "parcel build public/index.html --dist-dir build",
     "test": "elm-test"
   },
@@ -15,7 +15,7 @@
     "@parcel/transformer-webmanifest": "^2.0.0",
     "elm": "^0.19.1-5",
     "elm-test": "^0.19.1-revision7",
-    "parcel": "^2.8.4"
+    "parcel": "^2.0.0"
   }
 }
 
