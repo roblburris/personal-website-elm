@@ -46,9 +46,15 @@ view =
         ] []
         , text
             """
-            TODO      
-            )! majoring in Computer Science with minors in Art History and Mathematics. I was also an active member of the Psi Upsilon fraternity and involved myself in various clubs. While at UW, I took a variety of classes across a multitude of departments. Here are some of my favorites:
+            ) majoring in Computer Science with a minor in Art History. I was also an active member of the Psi Upsilon fraternity and worked as a undergraduate Teaching Assistant for CSE 401: Compiler Construction. While at UW, I took a variety of classes across a multitude of departments. Here are some of my favorites:
             """
+    ]
+    , ul [] [
+        li [] [text "CSE 452: Distributed Systems"]
+        , li [] [text "CSE 401: Compiler Construction"]
+        , li [] [text "CSE 451: Operating Systems"]
+        , li [] [text "ART H 380: 19th and 20th Century Art"]
+        , li [] [text "ART H 309: Mesoamerican Art"]
     ]
     , h2 [] [text "Professional Experience"]
     , span [] [text "Incoming Software Engineer @ "]
@@ -66,7 +72,7 @@ view =
     , span [] [
         text 
         """
-        I'm super excited to be joining Palantir at the NYC office after graduation!
+        I'm super excited to be joining Palantir at their NYC office after graduation!
         """
     ]
     , br [] []
@@ -113,7 +119,7 @@ view =
     , span [] [
         text 
         """
-        TODO      
+        While at Intuit I had the chance to work on Quickbooks Live, the service that connects Quickbooks customers to professional accountants that would help the customers with their bookkeeping. I worked on expanding notifications for the initial signup process and added email notifications to better inform customers.        
         """
     ]
     ]

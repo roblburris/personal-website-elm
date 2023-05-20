@@ -13,7 +13,7 @@ view =
          text
            """
             I'm Robert Burris, a senior at the University of Washington
-            studying Computer Science with minors in Art History and Mathematics. After graduating, I'm excited to be joining Palantir as a Software Engineer. Here you'll find a collection of my
+            studying Computer Science with a minor in Art History. After graduating, I'm excited to be joining Palantir as a Software Engineer. Here you'll find a collection of my
             various projects, blog posts, a copy of my resume, and info on 
             where to contact me.
             """
@@ -28,7 +28,7 @@ view =
         ]
     , ul [] [
           li [] [
-            text "Current Coursework: Theory of Computation (CSE 431), Visual Culture - Michelangelo (ART H 204), Art of Mesoamerica (ART H 309), Introduction to Real Estate (RE 250)"
+            text "Current Coursework: History and Theory of Photography (ART H 273), Art of the Andes (ART H 309), 19th and 20th Century Art (ART H 380), Startup Seminar (CSE 492 M)"
           ]
           , li [] [
             text "Ongoing Projects:"
