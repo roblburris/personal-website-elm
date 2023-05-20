@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 /*
   elm-hot creates an additional div wrapper around the app to make HMR possible.
   This could break styling in development mode if you are using Elm UI.
@@ -9,7 +11,7 @@
   height: inherit;  
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 
 * {
   font-family: 'Poppins';

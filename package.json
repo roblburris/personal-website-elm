@@ -1,0 +1,21 @@
+{
+  "name": "elm-personal-website",
+  "version": "1.0.0",
+  "repository": "git@github.com:roblburris/personal-website-elm.git",
+  "author": "Robert Burris <roblburris@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html --dist-dir build",
+    "test": "elm-test"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.0.0",
+    "@parcel/transformer-elm": "^2.0.0",
+    "@parcel/transformer-webmanifest": "^2.0.0",
+    "elm": "^0.19.1-5",
+    "elm-test": "^0.19.1-revision7",
+    "parcel": "^2.8.4"
+  }
+}
+
