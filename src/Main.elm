@@ -4,7 +4,7 @@ import Browser as Browser
 import Browser.Navigation as Nav
 import Url
 import Url.Parser
-import Html exposing (Html, text, div, h1, img, span, br, ul, li)
+import Html exposing (Html, div)
 import Html.Attributes exposing (..)
 import Page.Home as Home
 import Page.About as About
@@ -14,7 +14,6 @@ import Json.Decode
 import Http
 import String exposing (slice)
 import String exposing (toInt)
-import Html exposing (a)
 import Url.Parser exposing ((</>))
 import Page exposing (Page(..))
 import Markdown
@@ -73,11 +72,11 @@ init _ url key =
   ( {key = key
   , url = url
   ,route = Url.Parser.parse routeParser url
-  , date = "December 2022"
+  , date = "2023-03-18T08:23:25Z"
   ,blogEntries = []
   , posts = Array.empty
   }
-  , Cmd.batch [getLastUpdatedDate, getBlogs])
+  , Cmd.batch [getLastUpdatedDateBlog, getLastUpdatedDateRepo, getBlogs])
 
 
 
@@ -106,7 +105,7 @@ update msg model =
       GotDate result ->
         case result of
           Ok date ->
-            ( { model | date = parseDate date }, Cmd.none )
+            ( { model | date = (Basics.max date model.date)}, Cmd.none )
           Err _ ->
             ( model, Cmd.none )
       GotBlogs result ->
@@ -151,10 +150,17 @@ blogDecoder =
         (Json.Decode.field "download_url" Json.Decode.string)
   )
            
-getLastUpdatedDate : Cmd Msg
-getLastUpdatedDate =
+getLastUpdatedDateBlog : Cmd Msg
+getLastUpdatedDateBlog =
   Http.get
-    { url = "https://api.github.com/repos/roblburris/personal-blog/branches/master"
+    { url = "https://api.github.com/repos/roblburris/personal-blog/branches/Main"
+    , expect = Http.expectJson GotDate dateDecoder
+    }
+
+getLastUpdatedDateRepo : Cmd Msg
+getLastUpdatedDateRepo =
+  Http.get
+    { url = "https://api.github.com/repos/roblburris/personal-website-elm/branches/main"
     , expect = Http.expectJson GotDate dateDecoder
     }
 
@@ -226,18 +232,21 @@ blogPostView content =
 
 view : Model -> Browser.Document Msg
 view model =
+  let
+     date = parseDate model.date 
+  in
   case model.route of
       Just Home ->
-        Page.view model.date (Home.view)
+        Page.view date (Home.view)
       Just About ->
-        Page.view model.date (About.view)
+        Page.view date (About.view)
       Just Projects ->
-        Page.view model.date (Projects.view)
+        Page.view date (Projects.view)
       Just Blog ->
-        Page.view model.date (Blog.view model.blogEntries)
+        Page.view date (Blog.view model.blogEntries)
       Just (Post title) ->
-        Page.view model.date (blogPostView (getPost (getPostIndex title model.blogEntries) (Array.toList model.posts)))
+        Page.view date (blogPostView (getPost (getPostIndex title model.blogEntries) (Array.toList model.posts)))
       _ ->
-        Page.view model.date (Home.view)
+        Page.view date (Home.view)
 
 
