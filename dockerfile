@@ -2,8 +2,7 @@ FROM alpine:latest
 
 RUN apk add --update yarn
 
-ADD ./* ./elm_app
-RUN cd elm_app
+ADD ./* ./
 
 RUN yarn
 EXPOSE 1234
