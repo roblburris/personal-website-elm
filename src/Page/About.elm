@@ -38,7 +38,7 @@ view =
     , span [] [
         text 
             """
-            I'm currently in the process of completing my undergraduate studies at the University of Washington (Go Dawgs!  
+            I graduated from the University of Washington (Go Dawgs!  
             """
         , img [
             src "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/University_of_Washington_Purple_Block_W_logo.svg/2560px-University_of_Washington_Purple_Block_W_logo.svg.png"
@@ -46,7 +46,7 @@ view =
         ] []
         , text
             """
-            ) majoring in Computer Science with a minor in Art History. I was also an active member of the Psi Upsilon fraternity and worked as a undergraduate Teaching Assistant for CSE 401: Compiler Construction. While at UW, I took a variety of classes across a multitude of departments. Here are some of my favorites:
+            ) with a degree in Computer Science and minor in Art History. I was also an active member of the Psi Upsilon fraternity and worked as a undergraduate Teaching Assistant for CSE 401: Compiler Construction. While at UW, I took a variety of classes across a multitude of departments. Here are some of my favorites:
             """
     ]
     , ul [] [
@@ -72,7 +72,7 @@ view =
     , span [] [
         text 
         """
-        I'm super excited to be joining Palantir at their NYC office after graduation!
+        Palantir Foundry - Ontology Backend.
         """
     ]
     , br [] []

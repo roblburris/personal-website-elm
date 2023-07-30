@@ -12,8 +12,7 @@ view =
     , span [] [
          text
            """
-            I'm Robert Burris, a senior at the University of Washington
-            studying Computer Science with a minor in Art History. After graduating, I'm excited to be joining Palantir as a Software Engineer. Here you'll find a collection of my
+            I'm Robert Burris, a Software Engineer at Palantir. I graduated from the University of Washington with a BS in Computer Science and minor in Art History in 2023. Broadly speaking, my interests lie in building performant low latency distributed systems. Here you'll find a collection of my
             various projects, blog posts, a copy of my resume, and info on 
             where to contact me.
             """
@@ -28,9 +27,6 @@ view =
         ]
     , ul [] [
           li [] [
-            text "Current Coursework: History and Theory of Photography (ART H 273), Art of the Andes (ART H 309), 19th and 20th Century Art (ART H 380), Startup Seminar (CSE 492 M)"
-          ]
-          , li [] [
             text "Ongoing Projects:"
             , ul [] [
               li [] [
